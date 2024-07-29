@@ -276,10 +276,10 @@ class MIPROv2(Teleprompter):
                     metric=self.metric,
                     teacher_settings=self.teacher_settings,
                     seed=seed,
-                    metric_threshold=None,
+                    metric_threshold=metric_threshold,
                 )
 
-            '''
+
             try:
                 demo_candidates = create_n_fewshot_demo_sets(
                     student=program,
@@ -298,7 +298,6 @@ class MIPROv2(Teleprompter):
                 print(f"Error generating fewshot examples: {e}")
                 print("Running without fewshot examples.")
                 demo_candidates = None
-            '''
 
             # Generate N candidate prompts
             proposer.program_aware = program_aware_proposer

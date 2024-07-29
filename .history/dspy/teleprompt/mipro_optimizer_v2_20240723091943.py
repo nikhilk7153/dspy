@@ -267,19 +267,6 @@ class MIPROv2(Teleprompter):
             #     demo_candidates = create_n_fewshot_example_sets(program=program, trainset=trainset, n=self.n, hard_fewshot=hard_fewshot, metric=self.metric, teacher_settings=self.teacher_settings, max_bootstrapped_demos=max_bootstrapped_demos_for_candidate_gen, max_labeled_demos=max_labeled_demos_for_candidate_gen)
 
             # Generate N few shot example sets
-            demo_candidates = create_n_fewshot_demo_sets(
-                    student=program,
-                    num_candidate_sets=self.n,
-                    trainset=trainset,
-                    max_labeled_demos=max_labeled_demos_for_candidate_gen,
-                    max_bootstrapped_demos=max_bootstrapped_demos_for_candidate_gen,
-                    metric=self.metric,
-                    teacher_settings=self.teacher_settings,
-                    seed=seed,
-                    metric_threshold=None,
-                )
-
-            '''
             try:
                 demo_candidates = create_n_fewshot_demo_sets(
                     student=program,
@@ -293,12 +280,11 @@ class MIPROv2(Teleprompter):
                     metric_threshold=metric_threshold,
                 )
             except Exception as e:
-                print("LINE 283")
+                print("")
 
                 print(f"Error generating fewshot examples: {e}")
                 print("Running without fewshot examples.")
                 demo_candidates = None
-            '''
 
             # Generate N candidate prompts
             proposer.program_aware = program_aware_proposer

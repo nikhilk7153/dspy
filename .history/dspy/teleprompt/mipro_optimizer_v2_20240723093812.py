@@ -298,7 +298,7 @@ class MIPROv2(Teleprompter):
                 print(f"Error generating fewshot examples: {e}")
                 print("Running without fewshot examples.")
                 demo_candidates = None
-            '''
+            
 
             # Generate N candidate prompts
             proposer.program_aware = program_aware_proposer

@@ -88,7 +88,7 @@ class Template(BaseTemplate):
         """
         example = dsp.Example(example)
 
-        
+        '''
         if not raw_pred:
             raw_pred = "No response"
         
