@@ -64,6 +64,7 @@ def test_pgvectorrm_retrieve(setup_pgvectorrm):
     (2, 2),
     (3, 2),  # Assuming only 2 entries exist
 ])
+
 def test_pgvectorrm_retrieve_diff_k(setup_pgvectorrm, k, expected):
     setup_pgvectorrm.k = k
     query = "test query"

@@ -124,6 +124,9 @@ class AzureOpenAI(LM):
 
         self.history: list[dict[str, Any]] = []
 
+        print("LINE 127")
+        print("System Prompt: " + str(self.system_prompt) )
+
     def _openai_client(self):
         if OPENAI_LEGACY:
             return openai
